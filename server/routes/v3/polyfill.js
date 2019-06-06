@@ -13,7 +13,8 @@ async function respondWithBundle(response, params, bundle) {
 	const headers = {
 		"Cache-Control": "public, s-maxage=31536000, max-age=604800, stale-while-revalidate=604800, stale-if-error=604800",
 		"Content-Type": "text/javascript; charset=utf-8",
-		"surrogate-key": "polyfill-service"
+		"surrogate-key": "polyfill-service",
+		"Vary": "User-Agent, Accept-Encoding"
 	};
 	if (params.compression) {
 		headers["Content-Encoding"] = params.compression;
