@@ -30,7 +30,6 @@ function service(options) {
 		next();
 	});
 	mountRoutes(app);
-	app.use(compression({ level: 9 }));
 	app.use(extractHeaders());
 	app.use(
 		serveStatic(path.join(__dirname, "../dist"), {
